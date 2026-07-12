@@ -1,9 +1,11 @@
 package com.incubyte_kata.api.core.exception;
 
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
 
+@Getter
 public class BaseException extends RuntimeException {
 
     private final String errorCode;
@@ -24,15 +26,4 @@ public class BaseException extends RuntimeException {
         this.timestamp = LocalDateTime.now();
     }
 
-    public String getErrorCode() {
-        return errorCode;
-    }
-
-    public HttpStatus getStatus() {
-        return status;
-    }
-
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
 }

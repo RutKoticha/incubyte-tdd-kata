@@ -1,5 +1,6 @@
 package com.incubyte_kata.api.core.exception;
 
+import com.incubyte_kata.api.core.response.ErrorResponse;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -79,11 +80,11 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleGenericException(Exception ex) {
-        log.error("An unhandled internal server exception occurred", ex);
+    public ResponseEntity<ErrorResponse> handleGenericException(Exception exception) {
+        log.error("An unhandled internal server exception occurred : {}", exception);
 
         ErrorResponse response = ErrorResponse.builder()
-                .message("An unexpected error occurred. Please try again later.")
+                .message(exception.getMessage())
                 .errorCode("INTERNAL_SERVER_ERROR")
                 .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
                 .timestamp(LocalDateTime.now())
