@@ -1,6 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ToastService } from './shared/services/toast.service';
 
+/**
+ * Root component of the application.
+ * Manages global toasts and layout orchestration.
+ */
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
@@ -8,5 +13,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('web');
+  /** Global Toast notification service. */
+  protected readonly toastService = inject(ToastService);
 }
