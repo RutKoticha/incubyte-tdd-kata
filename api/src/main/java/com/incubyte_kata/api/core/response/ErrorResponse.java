@@ -1,4 +1,4 @@
-package com.incubyte_kata.api.core.exception;
+package com.incubyte_kata.api.core.response;
 
 import lombok.Builder;
 import lombok.Getter;

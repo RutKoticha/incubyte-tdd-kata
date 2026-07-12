@@ -1,1 +1,89 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* Define the Catppuccin Mocha colors and Material 3 design variables */
+:root {
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+
+  /* Material 3 Mappings */
+  --m3-background: var(--ctp-base);
+  --m3-on-background: var(--ctp-text);
+  --m3-surface: var(--ctp-mantle);
+  --m3-surface-container: var(--ctp-surface0);
+  --m3-primary: var(--ctp-mauve);
+  --m3-on-primary: var(--ctp-crust);
+  --m3-secondary: var(--ctp-lavender);
+  --m3-on-secondary: var(--ctp-base);
+  --m3-outline: var(--ctp-overlay0);
+  --m3-outline-variant: var(--ctp-surface2);
+  --m3-error: var(--ctp-red);
+  --m3-success: var(--ctp-green);
+
+  --font-headings: 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* Global styles and resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--m3-background);
+  color: var(--m3-on-background);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, .m3-logo-badge {
+  font-family: var(--font-headings);
+}
+
+/* Material 3 Expressive typography and focus states */
+a, button, input {
+  font-family: inherit;
+}
+
+/* Scrollbars customized to blend with Mocha palette */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ctp-mantle);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ctp-surface1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ctp-surface2);
+}
