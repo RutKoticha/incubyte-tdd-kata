@@ -1,3 +1,20 @@
 spring:
   application:
     name: api
+  profiles:
+    active: dev
+  config:
+    import: file:.env[.properties]
+
+security:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration: 24 * 60 * 60 * 1000
+
+spring-doc:
+    api-docs:
+      path: /api-docs
+    swagger-ui:
+      path: /swagger-ui.html
+      operations-sorter: method
+      tag-sorter: alpha
